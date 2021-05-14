@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -11,10 +10,22 @@ public class LevelManager : MonoBehaviour
         currentIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
-    public void loadGameFromStart()
+    public void loadMenu()
     {   
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
         if (currentIndex == 0) return;
+    }
+
+    public void loadLevelMenu()
+    {
+        int saveIndex = PlayerPrefs.GetInt("SaveIndex");
+        if (currentIndex > saveIndex)
+        {
+            PlayerPrefs.SetInt("SaveIndex", currentIndex - 1);
+        }
+
+        SceneManager.LoadScene(1);
+        if (currentIndex == 1) return;
     }
 
     public void loadCurrentLevel()
@@ -24,7 +35,18 @@ public class LevelManager : MonoBehaviour
 
     public void loadNextLevel()
     {
+        int saveIndex = PlayerPrefs.GetInt("SaveIndex");
+        if (currentIndex > saveIndex)
+        {
+            PlayerPrefs.SetInt("SaveIndex", currentIndex - 1);
+        }
+
         currentIndex++;
         SceneManager.LoadScene(currentIndex);
+    }
+
+    public void loadLevel(int index)
+    {
+        SceneManager.LoadScene(index+1);
     }
 }

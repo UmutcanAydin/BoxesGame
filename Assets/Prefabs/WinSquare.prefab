@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 3
-  minPower: {x: -10, y: -10}
-  maxPower: {x: 10, y: 10}
+  minPower: {x: -11, y: -11}
+  maxPower: {x: 9, y: 9}
   forceLimit: 0.3
   groundRaycastLength: 1
 --- !u!114 &4645850383655298787
@@ -208,7 +208,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.072668225, g: 0.108644836, b: 0.6698113, a: 1}
+      key0: {r: 0.9098039, g: 0.27058825, b: 0.27058825, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
