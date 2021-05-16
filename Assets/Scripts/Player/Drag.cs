@@ -13,48 +13,37 @@ public class Drag : MonoBehaviour
     [SerializeField] float groundRaycastLength = 1;
 
     Line line;
+    SpriteRenderer sprt;
+    Color firstColor;
 
     Vector2 force;
     Vector3 startPoint;
     Vector3 endPoint;
-
     bool jumpHandled = false;
 
     void Start()
     {
         rgbd = GetComponent<Rigidbody2D>();
         line = GetComponent<Line>();
+        sprt = GetComponent<SpriteRenderer>();
+        firstColor = sprt.color;
         GetComponent<LineRenderer>().startColor = GetComponent<SpriteRenderer>().color;
         GetComponent<LineRenderer>().endColor = new Color(0,0,0,0);
     }
 
     void Update()
     {
-        Vector3 midRayPos = transform.position;
-        Vector3 leftRayPos = transform.position + new Vector3(-transform.localScale.x, 0, 0) / 3;
-        Vector3 rightRayPos = transform.position + new Vector3(transform.localScale.x, 0, 0) / 3;
-
-        RaycastHit2D[] hitsMid = Physics2D.RaycastAll(midRayPos, Vector2.down, groundRaycastLength, LayerMask.GetMask("Floor") | LayerMask.GetMask("DraggableObject"));
-        RaycastHit2D[] hitsLeft = Physics2D.RaycastAll(leftRayPos,Vector2.down, groundRaycastLength, LayerMask.GetMask("Floor") | LayerMask.GetMask("DraggableObject"));
-        RaycastHit2D[] hitsRight = Physics2D.RaycastAll(rightRayPos, Vector2.down, groundRaycastLength, LayerMask.GetMask("Floor") | LayerMask.GetMask("DraggableObject"));
-
-        for (int i = 1; i < hitsMid.Length; i++)
+      
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, transform.localScale,0, Vector2.down,groundRaycastLength, LayerMask.GetMask("Floor") | LayerMask.GetMask("DraggableObject"));
+        
+        for (int i = 1; i < hits.Length; i++)
         {
-            if (!hitsMid[i]) return;
-            HandleDrag();
-        }
-        for (int i = 1; i < hitsLeft.Length; i++)
-        {
-            if (!hitsLeft[i] ||jumpHandled) return;
-            HandleDrag();
-        }
-        for (int i = 1; i < hitsRight.Length; i++)
-        {
-            if (!hitsRight[i] || jumpHandled) return;
-            HandleDrag();
+            if (hits[i] && !jumpHandled)
+            {
+                HandleDrag();
+            }
         }
         jumpHandled = false;
-
     }
 
     private void HandleDrag()
@@ -85,8 +74,23 @@ public class Drag : MonoBehaviour
                 force = Vector2.zero;
             }
             rgbd.AddForce(force * power, ForceMode2D.Impulse);
-            line.EndLine();    
+            line.EndLine();
         }
         jumpHandled = true;
+    }
+
+    public void SetFreeze(RigidbodyType2D type)
+    {
+        rgbd.bodyType = type;
+        switch (rgbd.bodyType)
+        {
+            case RigidbodyType2D.Static:
+                sprt.color = new Color32(83, 53, 74, 255);
+                break;
+
+            case RigidbodyType2D.Dynamic:
+                sprt.color = firstColor;
+                break;
+        }
     }
 }

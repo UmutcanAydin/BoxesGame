@@ -6,6 +6,11 @@ using UnityEngine.UI;
 public class Teleporter : MonoBehaviour
 {
     [SerializeField] Button answerButton;
+    ParticleSystem ps;
+    private void Start()
+    {
+        ps = GetComponent<ParticleSystem>();
+    }
 
     public void Teleport()
     {
@@ -14,6 +19,7 @@ public class Teleporter : MonoBehaviour
         {
             if (collider.CompareTag("Winner"))
             {
+                ps.Play();
                 collider.transform.position = new Vector2(answerButton.transform.position.x, answerButton.transform.position.y);
             }
         }

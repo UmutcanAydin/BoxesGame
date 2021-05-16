@@ -12,11 +12,11 @@ public class Area : MonoBehaviour
             RigidbodyType2D type = collider.GetComponent<Rigidbody2D>().bodyType;
             if (type == RigidbodyType2D.Dynamic)
             {
-                collider.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                collider.GetComponent<Drag>().SetFreeze(RigidbodyType2D.Static);
             }
             else if (type == RigidbodyType2D.Static)
             {
-                collider.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                collider.GetComponent<Drag>().SetFreeze(RigidbodyType2D.Dynamic);
             }
         }
     }
