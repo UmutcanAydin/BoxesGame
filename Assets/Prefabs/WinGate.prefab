@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2820565898709950108}
   m_Layer: 0
   m_Name: WinGate
-  m_TagString: Untagged
+  m_TagString: Gate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2820565898709950104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.629, y: -0.441, z: 0}
+  m_LocalPosition: {x: 4.629, y: -0.441, z: 1}
   m_LocalScale: {x: 2, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -122,4 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef067e368b8d6a4b9e08a086ff780bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winScreen: {fileID: 0}
+  winScreen: {fileID: 3557292503815145770, guid: 9b845c42d5b2f5942a991cc9dd3eaaa6, type: 3}

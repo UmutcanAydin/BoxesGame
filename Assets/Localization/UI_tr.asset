@@ -35,7 +35,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 630572392448
-    m_Localized: "Men\xFC"
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3329407956230144
+    m_Localized: Destek
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3329546129186816
+    m_Localized: Bolumu Gec
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3334037452824576
+    m_Localized: "A\u015Fa\u011F\u0131daki Tu\u015Flarla Kare De\u011Fi\u015Ftir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3334347491581952
+    m_Localized: "Kareler Mavi B\xF6lgede \u0130\xE7erisindeyken, B\xF6lgeye Bas"
     m_Metadata:
       m_Items: []
   references:

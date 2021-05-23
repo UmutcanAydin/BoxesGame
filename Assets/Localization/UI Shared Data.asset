@@ -35,6 +35,22 @@ MonoBehaviour:
     m_Key: "menu\t"
     m_Metadata:
       m_Items: []
+  - m_Id: 3329407956230144
+    m_Key: support
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3329546129186816
+    m_Key: "skip\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3334037452824576
+    m_Key: changechartutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3334347491581952
+    m_Key: buttontutorial
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

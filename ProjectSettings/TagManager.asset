@@ -7,6 +7,7 @@ TagManager:
   - Stoppable
   - Winner
   - Retry
+  - Gate
   layers:
   - Default
   - TransparentFX
