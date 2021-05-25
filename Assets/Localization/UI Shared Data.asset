@@ -51,6 +51,18 @@ MonoBehaviour:
     m_Key: buttontutorial
     m_Metadata:
       m_Items: []
+  - m_Id: 3397264081625088
+    m_Key: teleportertutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4070756510801920
+    m_Key: music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4070812613812224
+    m_Key: effects
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

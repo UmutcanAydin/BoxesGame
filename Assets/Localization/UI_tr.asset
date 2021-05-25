@@ -54,5 +54,17 @@ MonoBehaviour:
     m_Localized: "Kareler Mavi B\xF6lgede \u0130\xE7erisindeyken, B\xF6lgeye Bas"
     m_Metadata:
       m_Items: []
+  - m_Id: 3397264081625088
+    m_Localized: "Sadece K\xFC\xE7\xFCk Kare I\u015F\u0131nlay\u0131c\u0131ya Girebilir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4070756510801920
+    m_Localized: Muzik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4070812613812224
+    m_Localized: Ses Efektleri
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

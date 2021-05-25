@@ -28,6 +28,12 @@ public class LevelManager : MonoBehaviour
         if (currentIndex == 1) return;
     }
 
+    public void loadLevelMenuWithoutSaving()
+    {
+        SceneManager.LoadScene(1);
+        if (currentIndex == 1) return;
+    }
+
     public void loadCurrentLevel()
     {
         SceneManager.LoadScene(currentIndex);

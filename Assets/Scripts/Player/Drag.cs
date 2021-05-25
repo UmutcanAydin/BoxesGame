@@ -14,6 +14,7 @@ public class Drag : MonoBehaviour
 
     Line line;
     SpriteRenderer sprt;
+    OneShotPlayer osp;
     Color firstColor;
 
     Vector2 force;
@@ -27,6 +28,7 @@ public class Drag : MonoBehaviour
         line = GetComponent<Line>();
         sprt = GetComponent<SpriteRenderer>();
         firstColor = sprt.color;
+        osp = GetComponent<OneShotPlayer>();
         GetComponent<LineRenderer>().startColor = GetComponent<SpriteRenderer>().color;
         GetComponent<LineRenderer>().endColor = new Color(0,0,0,0);
     }
@@ -72,6 +74,10 @@ public class Drag : MonoBehaviour
             if (Mathf.Abs(force.x) < forceLimit && Mathf.Abs(force.y) < forceLimit)
             {
                 force = Vector2.zero;
+            }
+            if(force != Vector2.zero)
+            {
+                osp.Play();
             }
             rgbd.AddForce(force * power, ForceMode2D.Impulse);
             line.EndLine();
