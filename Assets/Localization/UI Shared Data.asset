@@ -63,6 +63,10 @@ MonoBehaviour:
     m_Key: effects
     m_Metadata:
       m_Items: []
+  - m_Id: 4754596707377152
+    m_Key: doortutorial
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

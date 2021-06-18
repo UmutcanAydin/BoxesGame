@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class OneShotPlayer : MonoBehaviour
 {
 
-    [SerializeField] AudioClip effect;
+    [SerializeField] AudioClip jumpEffect;
+    [SerializeField] AudioClip winEffect;
     AudioSource audioSource;
 
     void Start()
@@ -14,8 +12,13 @@ public class OneShotPlayer : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void Play()
+    public void PlayJump()
     {
-        audioSource.PlayOneShot(effect);
+        audioSource.PlayOneShot(jumpEffect);
+    }
+
+    public void PlayWin()
+    {
+        audioSource.PlayOneShot(winEffect);
     }
 }

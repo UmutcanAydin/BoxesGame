@@ -47,15 +47,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3334037452824576
-    m_Localized: "A\u015Fa\u011F\u0131daki Tu\u015Flarla Kare De\u011Fi\u015Ftir"
+    m_Localized: "A\u015Fa\u011F\u0131daki Tu\u015Flarla Kutu De\u011Fi\u015Ftir"
     m_Metadata:
       m_Items: []
   - m_Id: 3334347491581952
-    m_Localized: "Kareler Mavi B\xF6lgede \u0130\xE7erisindeyken, B\xF6lgeye Bas"
+    m_Localized: "Kutular Mavi B\xF6lge \u0130\xE7erisindeyken, B\xF6lgeye Bas"
     m_Metadata:
       m_Items: []
   - m_Id: 3397264081625088
-    m_Localized: "Sadece K\xFC\xE7\xFCk Kare I\u015F\u0131nlay\u0131c\u0131ya Girebilir"
+    m_Localized: "Sadece K\xFC\xE7\xFCk Kutu I\u015F\u0131nlay\u0131c\u0131ya Girebilir"
     m_Metadata:
       m_Items: []
   - m_Id: 4070756510801920
@@ -64,6 +64,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 4070812613812224
     m_Localized: Ses Efektleri
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4754596707377152
+    m_Localized: "Sadece B\xFCy\xFCk Kutu Kap\u0131 Tu\u015Funu \xC7al\u0131\u015Ft\u0131rabilir"
     m_Metadata:
       m_Items: []
   references:

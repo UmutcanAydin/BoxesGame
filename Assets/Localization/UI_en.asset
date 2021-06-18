@@ -47,15 +47,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3334037452824576
-    m_Localized: Change Squares With Buttons Below
+    m_Localized: Change Boxes With Buttons Below
     m_Metadata:
       m_Items: []
   - m_Id: 3334347491581952
-    m_Localized: When Squares Are In The Blue Zone, Press The Blue Zone
+    m_Localized: When Boxes Are In The Blue Zone, Press The Blue Zone
     m_Metadata:
       m_Items: []
   - m_Id: 3397264081625088
-    m_Localized: Only The Small Square Can Enter Teleporter
+    m_Localized: Only The Small Box Can Enter Teleporter
     m_Metadata:
       m_Items: []
   - m_Id: 4070756510801920
@@ -64,6 +64,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 4070812613812224
     m_Localized: Sound Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4754596707377152
+    m_Localized: Only The Big Box Can Activate Door Button
     m_Metadata:
       m_Items: []
   references:

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -8,8 +6,8 @@ public class SliderHandler : MonoBehaviour
 {
     public Slider slider;
     public AudioMixer mixer;
-    public string exposedMixerVar = "MusicVol";
-    public string prefName = "MusicValue";
+    public string exposedMixerVar;
+    public string prefName;
 
     private void Start()
     {

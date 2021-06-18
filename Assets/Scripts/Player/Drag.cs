@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Drag : MonoBehaviour
@@ -28,7 +26,7 @@ public class Drag : MonoBehaviour
         line = GetComponent<Line>();
         sprt = GetComponent<SpriteRenderer>();
         firstColor = sprt.color;
-        osp = GetComponent<OneShotPlayer>();
+        osp = FindObjectOfType<OneShotPlayer>();
         GetComponent<LineRenderer>().startColor = GetComponent<SpriteRenderer>().color;
         GetComponent<LineRenderer>().endColor = new Color(0,0,0,0);
     }
@@ -50,37 +48,36 @@ public class Drag : MonoBehaviour
 
     private void HandleDrag()
     {
-        //if (Input.touchCount > 0)
-        //{
-        //    Touch touch = Input.GetTouch(0);
-        //}
-        if (Input.GetMouseButtonDown(0))
-        {           
-            startPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            startPoint.z = 15;
-        }
-        if (Input.GetMouseButton(0))
-        {          
-            Vector3 currentPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            currentPoint.z = 15;
-            line.RenderLine(startPoint, currentPoint);           
-        }
-
-        if (Input.GetMouseButtonUp(0))
+        if (Input.touchCount > 0)
         {
-            endPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            endPoint.z = 15;
-            force = new Vector2(Mathf.Clamp(startPoint.x - endPoint.x, minPower.x, maxPower.x), Mathf.Clamp(startPoint.y - endPoint.y, minPower.y, maxPower.y));
-            if (Mathf.Abs(force.x) < forceLimit && Mathf.Abs(force.y) < forceLimit)
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
             {
-                force = Vector2.zero;
+                startPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                startPoint.z = 15;
             }
-            if(force != Vector2.zero)
+            else if(touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
             {
-                osp.Play();
+                Vector3 currentPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                currentPoint.z = 15;
+                line.RenderLine(startPoint, currentPoint);
             }
-            rgbd.AddForce(force * power, ForceMode2D.Impulse);
-            line.EndLine();
+            else if(touch.phase == TouchPhase.Ended)
+            {
+                endPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                endPoint.z = 15;
+                force = new Vector2(Mathf.Clamp(startPoint.x - endPoint.x, minPower.x, maxPower.x), Mathf.Clamp(startPoint.y - endPoint.y, minPower.y, maxPower.y));
+                if (Mathf.Abs(force.x) < forceLimit && Mathf.Abs(force.y) < forceLimit)
+                {
+                    force = Vector2.zero;
+                }
+                if (force != Vector2.zero)
+                {
+                    osp.PlayJump();
+                }
+                rgbd.AddForce(force * power, ForceMode2D.Impulse);
+                line.EndLine();
+            }
         }
         jumpHandled = true;
     }
